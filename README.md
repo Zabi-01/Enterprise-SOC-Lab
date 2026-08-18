@@ -4,6 +4,8 @@
 
 **A Wazuh SIEM homelab, built from scratch, for detecting real Active Directory attacks.**
 
+![Wazuh](https://img.shields.io/badge/Wazuh-4.14.6-1B84BE?logo=wazuh&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white) ![WSL2](https://img.shields.io/badge/WSL2-Ubuntu%2024.04-E95420?logo=ubuntu&logoColor=white) ![Windows Server](https://img.shields.io/badge/Windows%20Server-2025-0078D6?logo=windows&logoColor=white) ![VMware](https://img.shields.io/badge/VMware-VMnet8%20NAT-607078?logo=vmware&logoColor=white) ![Kali](https://img.shields.io/badge/Kali-Attacker-557C94?logo=kalilinux&logoColor=white) ![MITRE ATT&CK](https://img.shields.io/badge/MITRE%20ATT%26CK-Mapped-D33A2C)
+
 [Enterprise-SOC-Lab](https://github.com/Zabi-01/Enterprise-SOC-Lab) · [Active-Directory-Attack-Lab](https://github.com/Zabi-01/Active-Directory-Attack-Lab)
 
 </div>
@@ -58,7 +60,7 @@ This lab was built from scratch to see what an enterprise SOC actually catches �
 | 8 | File Deletion | `T1070.004` | Defense Evasion | Rule `92021` | — |
 | 9 | Lateral Tool Transfer | `T1570` | Lateral Movement | — | — |
 
-Full time-boxed breakdown (alerts evolution, top tactics, per-agent technique split) is in the [MITRE ATT&CK report](Reports/wazuh-mitre-attck-report.pdf).
+Full time-boxed breakdown (alerts evolution, top tactics, per-agent technique split) is in the [MITRE ATT&CK report](Reports/wazuh-module-overview-mitre-1787061889.pdf).
 
 ### Notable Alerts
 
@@ -88,9 +90,9 @@ Last 24 hours:
 
 Exported Wazuh reports backing the numbers above:
 
-- [MITRE ATT&CK report](Reports/wazuh-mitre-attck-report.pdf) — alerts evolution, top tactics, per-agent technique breakdown, full alerts summary
-- Threat Hunting report — *(add path once uploaded)*
-- IT Hygiene report — *(add path once uploaded)*
+- [Threat Hunting report](Reports/wazuh-module-overview-general-1787061996.pdf) — alert trends, top rules, agent summary
+- [IT Hygiene report](Reports/wazuh-module-overview-it-hygiene-1787062117.pdf) — installed software, running processes, port/service inventory
+- [MITRE ATT&CK report](Reports/wazuh-module-overview-mitre-1787061889.pdf) — alerts evolution, top tactics, per-agent technique breakdown, full alerts summary
 
 ## Documentation
 
