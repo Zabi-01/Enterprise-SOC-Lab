@@ -18,7 +18,10 @@ This lab was built from scratch to see what an enterprise SOC actually catches â
 
 ![Architecture Diagram](Architecture%20Diagram.png)
 
-![Wazuh Overview](Screenshots/Wazuh_Overview.png)
+<p align="center">
+  <img src="Screenshots/Wazuh_Overview.png" alt="Wazuh Overview" width="48%">
+  <img src="Screenshots/Wazuh_Discover.png" alt="Wazuh Discover" width="48%">
+</p>
 
 ## Stack
 
