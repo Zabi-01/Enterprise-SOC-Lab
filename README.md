@@ -16,12 +16,18 @@
 
 This lab was built from scratch to see what an enterprise SOC actually catches — and misses — when a domain gets attacked end-to-end. A Windows Server 2025 Domain Controller, two domain-joined Windows 11 clients, and a Kali attacker sit on an isolated VMware NAT network, all shipping telemetry to a Wazuh stack running in Docker inside WSL2 on the host.
 
-![Architecture Diagram](Architecture%20Diagram.png)
-
 <p align="center">
-  <img src="Screenshots/Wazuh_Overview.png" alt="Wazuh Overview" width="48%">
-  <img src="Screenshots/Wazuh_Discover.png" alt="Wazuh Discover" width="48%">
-</p>
+  <img src="Architecture%20Diagram.png" alt="Architecture Diagram" width="96%">
+<table align="center">
+<tr>
+<td align="center"><img src="Screenshots/Wazuh_Overview.png" width="100%"><br><sub><b>Overview</b></sub></td>
+<td align="center"><img src="Screenshots/Wazuh_Discover.png" width="100%"><br><sub><b>Discover</b></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="Screenshots/Docker.png" width="100%"><br><sub><b>Docker</b></sub></td>
+<td align="center"><img src="Screenshots/Wazuh_IT_Hygine.png" width="100%"><br><sub><b>IT Hygiene</b></sub></td>
+</tr>
+</table>
 
 ## Stack
 
