@@ -46,20 +46,51 @@ This lab was built from scratch to see what an enterprise SOC actually catches �
 
 ![MITRE ATT&CK](Screenshots/Wazuh_MITRE_ATT%26CK.png)
 
-1. **Valid Accounts** — Defense Evasion, Initial Access, Persistence, Privilege Escalation — `4624` `4625` `4672` — 709 alerts
-2. **Domain Accounts** — Defense Evasion, Initial Access, Lateral Movement, Persistence, Privilege Escalation — `4728` `4732` — 258 alerts
-3. **Pass the Hash** — Defense Evasion, Initial Access, Lateral Movement, Persistence, Privilege Escalation — Rule `92652` — 258 alerts
-4. **Domain Policy Modification** — Defense Evasion, Privilege Escalation — 206 alerts
-5. **Ingress Tool Transfer** — Command and Control — 180 alerts
+| # | Technique | ID | Tactic(s) | Event/Rule ID(s) | Alerts |
+|---|---|---|---|---|---|
+| 1 | Valid Accounts | `T1078` | Defense Evasion, Initial Access, Persistence, Privilege Escalation | `4624` `4625` `4672` | 709 |
+| 2 | Domain Accounts | `T1078.002` | Defense Evasion, Initial Access, Lateral Movement, Persistence, Privilege Escalation | `4728` `4732` | 258 |
+| 3 | Pass the Hash | `T1550.002` | Defense Evasion, Initial Access, Lateral Movement, Persistence, Privilege Escalation | Rule `92652` `92657` | 258 |
+| 4 | Domain Policy Modification | `T1484` | Defense Evasion, Privilege Escalation | — | 206 |
+| 5 | Ingress Tool Transfer | `T1105` | Command and Control | — | 180 |
+| 6 | Account Discovery | `T1087` | Discovery | Rule `92039` | — |
+| 7 | Windows Command Shell | `T1059.003` | Execution | Rule `92032` `92052` | — |
+| 8 | File Deletion | `T1070.004` | Defense Evasion | Rule `92021` | — |
+| 9 | Lateral Tool Transfer | `T1570` | Lateral Movement | — | — |
+
+Full time-boxed breakdown (alerts evolution, top tactics, per-agent technique split) is in the [MITRE ATT&CK report](Reports/wazuh-mitre-attck-report.pdf).
+
+### Notable Alerts
+
+A few of the higher-signal hits pulled from the full alerts summary, worth calling out beyond the raw counts:
+
+| Rule ID | Description | Level |
+|---|---|---|
+| `92203` | `mimikatz.exe` created via PowerShell | 6 |
+| `92026` | `reg.exe` used to dump the SAM hive | 14 |
+| `60159` | Domain Admins group changed | 12 |
+| `92103` | LDAP activity from a PowerShell process — possible remote system discovery | 6 |
+| `92219` | DLL search-order hijack — payload dropped in the Windows root folder | 6 |
+| `92650` | New Windows service created from the Windows root path (admin-share abuse pattern) | 12 |
 
 ## Alert Severity
+
+Last 24 hours:
 
 | Severity | Level | Count |
 |---|---|---|
 | Critical | 15+ | 18 |
 | High | 12–14 | 120 |
-| Medium | 7–11 | 5,181 |
-| Low | 0–6 | 11,641 |
+| Medium | 7–11 | 5,183 |
+| Low | 0–6 | 11,822 |
+
+## Reports
+
+Exported Wazuh reports backing the numbers above:
+
+- [MITRE ATT&CK report](Reports/wazuh-mitre-attck-report.pdf) — alerts evolution, top tactics, per-agent technique breakdown, full alerts summary
+- Threat Hunting report — *(add path once uploaded)*
+- IT Hygiene report — *(add path once uploaded)*
 
 ## Documentation
 
@@ -74,7 +105,7 @@ This lab was built from scratch to see what an enterprise SOC actually catches �
 
 ## Screenshots
 
-[Architecture Diagram](Screenshots/Architecture%20Diagram.png) · [Wazuh Overview](Screenshots/Wazuh_Overview.png) · [Wazuh Discover](Screenshots/Wazuh_Discover.png) · [Wazuh Endpoints](Screenshots/Wazuh_Endpoints.png) · [Wazuh IT Hygiene](Screenshots/Wazuh_IT_Hygine.png) · [Wazuh MITRE ATT&CK](Screenshots/Wazuh_MITRE_ATT%26CK.png) · [WSL](Screenshots/WSL.png) · [Docker](Screenshots/Docker.png)
+[Architecture Diagram](Architecture%20Diagram.png) · [Wazuh Overview](Screenshots/Wazuh_Overview.png) · [Wazuh Discover](Screenshots/Wazuh_Discover.png) · [Wazuh Endpoints](Screenshots/Wazuh_Endpoints.png) · [Wazuh IT Hygiene](Screenshots/Wazuh_IT_Hygine.png) · [Wazuh MITRE ATT&CK](Screenshots/Wazuh_MITRE_ATT%26CK.png) · [WSL](Screenshots/WSL.png) · [Docker](Screenshots/Docker.png)
 
 ---
 
