@@ -14,7 +14,8 @@
 
 ## Overview
 
-This lab was built from scratch to see what an enterprise SOC actually catches — and misses — when a domain gets attacked end-to-end. A Windows Server 2025 Domain Controller, two domain-joined Windows 11 clients, and a Kali attacker sit on an isolated VMware NAT network, all shipping telemetry to a Wazuh stack running in Docker inside WSL2 on the host.
+This lab was built from scratch to see what an enterprise SOC actually catches — and misses — when a domain gets attacked end-to-end. A Windows Server 2025 Domain Controller, two domain-joined Windows 11 Enterprise clients, and a Kali attacker sit on an isolated VMware NAT network, all shipping telemetry to a Wazuh stack running in Docker inside WSL2 on the host.
+Every detection listed here was validated against a real attack run in the lab, not just configured and assumed to work — including the two that were initially missed and had to be fixed.
 
 <p align="center">
   <img src="Architecture%20Diagram.png" alt="Architecture Diagram" width="96%">
@@ -118,6 +119,9 @@ Exported Wazuh reports backing the numbers above:
 
 [Architecture Diagram](Architecture%20Diagram.png) · [Wazuh Overview](Screenshots/Wazuh_Overview.png) · [Wazuh Discover](Screenshots/Wazuh_Discover.png) · [Wazuh Endpoints](Screenshots/Wazuh_Endpoints.png) · [Wazuh IT Hygiene](Screenshots/Wazuh_IT_Hygine.png) · [Wazuh MITRE ATT&CK](Screenshots/Wazuh_MITRE_ATT%26CK.png) · [WSL](Screenshots/WSL.png) · [Docker](Screenshots/Docker.png)
 
+## Future Enhancements
+ 
+Network-level sensor (Zeek/Suricata) to close the LLMNR/mitm6 blind spot, active response rules for automated containment, VirusTotal API integration for automated file/hash reputation checks, and a Shuffle/SOAR layer for alert-to-ticket automation.
 ---
 
 Attack methodology and stage-by-stage writeups: **[Active-Directory-Attack-Lab](https://github.com/Zabi-01/Active-Directory-Attack-Lab)**
